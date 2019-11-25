@@ -1,0 +1,74 @@
+
+.form {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.form__text {
+  font-size: 24px;
+}
+.form__input {
+  border: none;
+  border-bottom: 2px solid #395dff;
+}
+.pagination {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__button {
+  font-size: 18px;
+  border: none;
+  padding: 5px 10px;
+  background: #6e93ff;
+  color: white;
+  cursor: pointer;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 4px;
+}
+.pagination__button:hover {
+  background: #395dff;
+}
+.pagination__button.active {
+  background: #25ce78;
+  font-weight: bold;
+  cursor: default;
+}
+button:focus, input:focus {
+  outline: none;
+}
+.pagination__button:disabled {}
+.pagination__etc {
+  font-size: 20px;
+  color: #aaa;
+  margin: 0 10px;
+  font-weight: bold;
+}
+.pagination__prew, .pagination__next {
+  border: none;
+  background: none;
+  color: #555;
+  font-size: 22px;
+  padding: 0;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+button:disabled {
+  opacity: 0.3;
+}
+table thead {
+  border-bottom: 2px solid #395dff;
+}
+table tbody tr td{
+  border-bottom: 1px solid #eee;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+table .name {
+  min-width: 150px;
+  padding-right: 20px;
+}

@@ -1,0 +1,38 @@
+<form class="form" [formGroup]="searchForm">
+  <label class="form__text">Search: </label>
+  <input class="form__input" type="text" formControlName="filter">
+</form>
+<div class="pagination">
+  <button class="pagination__prew" [disabled]="!Pagination.prevbuttom" (click)="Pagination.clickPrew()"><<</button>
+  <ng-container *ngIf="Pagination.prevbuttom">
+    <button class="pagination__button" (click)="Pagination.setPage(0)">1</button>
+    <span class="pagination__etc">...</span>
+  </ng-container>
+  <button *ngFor="let page of Pagination.visiblePages" class="pagination__button" [ngClass]="{'active' : page == Pagination.current}" (click)="Pagination.setPage(page)">{{page + 1}}</button>
+  <ng-container *ngIf="Pagination.nextbuttom">
+    <span class="pagination__etc">...</span>
+    <button class="pagination__button" (click)="Pagination.setPage(Pagination.totalPages.length - 1)">{{Pagination.totalPages.length}}</button>
+  </ng-container>
+  <button class="pagination__next" [disabled]="!Pagination.nextbuttom" (click)="Pagination.clickNext()">>></button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Cool column</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of filteredData | slice:(Pagination.current * pageSize):((Pagination.current + 1) * pageSize)">
+      <th class="name">{{ data[entry].name }}</th>
+      <td>{{ data[entry].description }}</td>
+      <td>{{ data[entry].status }}</td>
+      <td>
+        <!-- I'm a very important column for whatever reasons, so please do not remove me -->
+        <div *ngFor="let x of emptyArray"></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
